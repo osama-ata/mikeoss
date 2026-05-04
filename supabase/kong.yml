@@ -14,16 +14,22 @@ plugins:
         - OPTIONS
       headers:
         - Accept
+        - Accept-Encoding
+        - Accept-Language
+        - Accept-Profile
         - Accept-Version
+        - Authorization
         - Content-Length
         - Content-MD5
+        - Content-Profile
         - Content-Type
         - Date
-        - Authorization
+        - Prefer
+        - Range
         - X-Auth-Token
+        - X-Client-Info
+        - X-Supabase-Api-Version
         - apikey
-        - x-client-info
-        - x-supabase-api-version
       exposed_headers:
         - Date
         - X-Request-Id

@@ -1,0 +1,22 @@
+services:
+  backend:
+    environment:
+      # When Mike shares a Docker network with the Supabase stack,
+      # route backend traffic to Supabase Kong directly.
+      SUPABASE_URL: ${SUPABASE_URL:-http://kong:8000}
+    networks:
+      - default
+      - supabase
+
+  frontend:
+    # Keep browser-facing URL on localhost while backend uses kong on Docker network.
+    environment:
+      NEXT_PUBLIC_SUPABASE_URL: ${NEXT_PUBLIC_SUPABASE_URL:-http://localhost:8000}
+    networks:
+      - default
+      - supabase
+
+networks:
+  supabase:
+    external: true
+    name: ${SUPABASE_DOCKER_NETWORK:-supabase_default}

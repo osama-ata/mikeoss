@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker compose *)",
+      "Bash(grep:*)",
+      "Bash(docker exec:*)",
+      "Bash(cd:*)",
+      "Bash(cd /c/Users/osama/coding/mikeoss && docker compose up -d 2>&1)",
+      "Bash(tail:*)",
+      "Bash(docker compose:*)"
+    ]
+  }
+}
